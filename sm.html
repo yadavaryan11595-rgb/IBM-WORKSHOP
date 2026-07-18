@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialMind AI - Social Media Agent</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+<script>
+  window.wxOConfiguration = {
+    orchestrationID: "e7f715843b82480884a06eaa281d568b_90d52411-8415-4a09-aa8d-cfacd94a956a",
+    hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
+    rootElementID: "root",
+    deploymentPlatform: "ibmcloud",
+    crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/e7f715843b82480884a06eaa281d568b:90d52411-8415-4a09-aa8d-cfacd94a956a::",
+    chatOptions: {
+        agentId: "1af65946-7572-4091-aacc-da233dfd519d", 
+    }
+  };
+  setTimeout(function () {
+    const script = document.createElement('script');
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.addEventListener('load', function () {
+        wxoLoader.init();
+    });
+    document.head.appendChild(script);
+  }, 0);                     
+</script>
+
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,0.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 10%;
+    background:
+    linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),
+    url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#0284c7;
+}
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    transition:.4s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin:20px 0;
+    color:#38bdf8;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-box{
+    background:#1e293b;
+    padding:35px;
+    text-align:center;
+    border-radius:20px;
+}
+
+.stat-box h2{
+    color:#38bdf8;
+    font-size:40px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.service{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+}
+
+.contact{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact input,
+.contact textarea{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+.contact button{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+}
+
+@media(max-width:768px){
+.hero h1{
+    font-size:40px;
+}
+.hero p{
+    font-size:17px;
+}
+nav ul{
+    display:none;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">SocialMind AI</div>
+    <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#stats">Analytics</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>AI Powered <span>Social Media Agent</span></h1>
+        <p>
+            Manage multiple social media platforms, analyze audience sentiment,
+            discover trends, track competitors, generate content ideas and
+            automate engagement using advanced AI technology.
+        </p>
+        <a href="#features" class="btn">Explore Features</a>
+    </div>
+</section>
+
+<section id="features">
+    <h2 class="section-title">Core Features</h2>
+
+    <div class="features">
+
+        <div class="card">
+            <h3>📈 Trend Detection</h3>
+            <p>Discover trending hashtags, topics and viral content in real time.</p>
+        </div>
+
+        <div class="card">
+            <h3>💬 Sentiment Analysis</h3>
+            <p>Understand audience emotions and brand perception instantly.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤖 AI Content Creation</h3>
+            <p>Generate engaging captions, posts and campaign ideas.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Analytics Dashboard</h3>
+            <p>Track performance, reach, engagement and audience growth.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎯 Competitor Tracking</h3>
+            <p>Monitor competitor activities and benchmark performance.</p>
+        </div>
+
+        <div class="card">
+            <h3>📅 Smart Scheduling</h3>
+            <p>Schedule posts automatically at the best engagement times.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="stats">
+    <h2 class="section-title">Live Statistics</h2>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <h2 id="users">0</h2>
+            <p>Active Users</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="posts">0</h2>
+            <p>Posts Managed</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="campaigns">0</h2>
+            <p>Campaigns Created</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="growth">0%</h2>
+            <p>Engagement Growth</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="services">
+    <h2 class="section-title">AI Services</h2>
+
+    <div class="services">
+
+        <div class="service">
+            <h3>Content Strategy</h3>
+            <p>Create data-driven social media strategies for maximum growth.</p>
+        </div>
+
+        <div class="service">
+            <h3>Brand Monitoring</h3>
+            <p>Track mentions, reviews and audience conversations.</p>
+        </div>
+
+        <div class="service">
+            <h3>Audience Insights</h3>
+            <p>Understand demographics, interests and engagement behavior.</p>
+        </div>
+
+        <div class="service">
+            <h3>Automated Replies</h3>
+            <p>Use AI to respond instantly to comments and messages.</p>
+        </div>
+
+        <div class="service">
+            <h3>Campaign Optimization</h3>
+            <p>Improve campaign performance using AI recommendations.</p>
+        </div>
+
+        <div class="service">
+            <h3>Multi-Platform Management</h3>
+            <p>Manage Instagram, Facebook, LinkedIn, X and more.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact">
+        <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea rows="5" placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <h3>SocialMind AI Agent © 2026</h3>
+</footer>
+
+<script>
+
+function animateValue(id,start,end,duration){
+
+let obj=document.getElementById(id);
+let range=end-start;
+let current=start;
+let increment=end>start?1:-1;
+let stepTime=Math.abs(Math.floor(duration/range));
+
+let timer=setInterval(function(){
+
+current+=increment;
+obj.textContent=current;
+
+if(current==end){
+clearInterval(timer);
+}
+
+},stepTime);
+
+}
+
+window.onload=function(){
+
+animateValue("users",0,5000,2000);
+animateValue("posts",0,12000,2000);
+animateValue("campaigns",0,850,2000);
+
+let growth=0;
+
+let interval=setInterval(()=>{
+growth++;
+document.getElementById("growth").innerHTML=growth+"%";
+
+if(growth==95){
+clearInterval(interval);
+}
+},20);
+
+}
+
+function submitForm(e){
+e.preventDefault();
+alert("Thank you! Your message has been submitted.");
+}
+
+</script>
+
+</body>
+</html>
